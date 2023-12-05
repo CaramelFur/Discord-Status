@@ -1,16 +1,16 @@
 [package]
 name = "discord_status"
-version = "2.0.0"
+version = "2.1.0"
 edition = "2021"
 
 
 # Enable rt-multi-thread feature to use multi-threaded runtime
 [dependencies.tokio]
-version = "1.12.1"
+version = "1"
 features = ["macros", "full"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies.serenity]
 default-features = false
 features = ["model", "client", "gateway", "rustls_backend"]
-version = "0.11.5"
+version = "0.12"

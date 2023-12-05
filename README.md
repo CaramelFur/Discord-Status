@@ -8,7 +8,7 @@ You can start it with this docker compose:
 version: "3"
 services:
   discord-status:
-    image: ghcr.io/rubikscraft/discord-status:latest
+    image: ghcr.io/caramelfur/discord-status:latest
     container_name: discord-status
     environment:
       DISCORD_KEY: "Your bot key"

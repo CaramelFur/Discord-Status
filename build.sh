@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IMAGE_URL=ghcr.io/rubikscraft/discord-status
+IMAGE_URL=ghcr.io/caramelfur/discord-status
 
 # Exctract version from cargo.toml
 VERSION=$(grep -m 1 version Cargo.toml | cut -d '"' -f 2)

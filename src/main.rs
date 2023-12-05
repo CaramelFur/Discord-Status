@@ -1,7 +1,8 @@
 use std::env;
 
 use serenity::async_trait;
-use serenity::model::gateway::{Activity, Ready};
+use serenity::gateway::ActivityData;
+use serenity::model::gateway::Ready;
 use serenity::prelude::*;
 
 struct Handler;
@@ -11,14 +12,14 @@ impl EventHandler for Handler {
     async fn ready(&self, context: Context, ready: Ready) {
         let message = env::var("DISCORD_MESSAGE").unwrap_or_else(|_| "hello".to_string());
 
-        context.set_activity(Activity::playing(message)).await;
+        context.set_activity(Some(ActivityData::playing(message)));
 
         if let Some(shard) = ready.shard {
             println!(
                 "{} is connected on shard {}/{}!",
                 ready.user.name,
-                shard[0] + 1,
-                shard[1],
+                shard.id.0 + 1,
+                shard.total,
             );
         }
     }
