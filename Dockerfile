@@ -15,7 +15,7 @@ COPY . .
 RUN cargo build --release
 
 # Build final image
-FROM alpine:latest as runtime
+FROM alpine:latest AS runtime
 WORKDIR /app
 COPY --from=builder /app/target/release/discord_status ./app
 ENTRYPOINT [ "./app" ]

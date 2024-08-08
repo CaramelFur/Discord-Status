@@ -5,7 +5,6 @@ Simple docker container to keep a bot online with a status
 You can start it with this docker compose:
 
 ```yml
-version: "3"
 services:
   discord-status:
     image: ghcr.io/caramelfur/discord-status:latest
